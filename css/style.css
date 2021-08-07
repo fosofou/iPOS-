@@ -39,7 +39,7 @@ body{
     line-height: 2em;
   }
 
-  
+
 
   .content{
     display: grid;
@@ -51,7 +51,7 @@ body{
     margin-top: -125px;
     padding: 0;
   }
-  
+
 .content .square{
   position:relative;
   width: 125px;
@@ -98,4 +98,24 @@ body{
   margin: 5px;
 }
 
+.car-message {
+  color: black;
+  border-radius: 1em;
+  padding: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
 
+.car-message p{
+  font-size: 36px;
+  font-family: Montserrat, sans-serif;
+  padding: 5px;
+  text-align: center;
+}
+
+.car-message a{
+  text-align: center;
+}

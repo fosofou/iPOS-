@@ -1,19 +1,19 @@
+function drawCircle(){
+  setTimeout( function(){
+     $(".content").remove();
+     let circle = $(
+     "<div class = 'circle'>"+
+         "<div class = 'press' disabled >Нажать</div>" +
+     "</div>")
+     $('body').append(circle);
 
-$(document).ready(function(){
- setTimeout( function(){
-    $(".content").remove();
-    let circle = $(
-    "<div class = 'circle'>"+
-        "<div class = 'press' disabled >Нажать</div>" +
-    "</div>")
-    $('body').append(circle);
-
-    let $circle = $(".circle");
-    rotateCircle($circle);
-  },2000);
-});
+     let $circle = $(".circle");
+     rotateCircle($circle);
+   },2000);
+}
 
 function selectCar(){
+
   let markSelect = $(
     '<select id="mark_select" name="mark_select">'+
       '<option value="" disabled selected>Марка</option>'+
@@ -31,23 +31,22 @@ function selectCar(){
   )
 
   let markSet = new Set();
- 
 
   for (let car of CarsList.cars){
     markSet.add(car['mark']);
   }
-
+  console.log(markSet);
   for (let mark of markSet){
     $(markSelect).append($(`<option value="${mark}">${mark}</option>`));
-  }  
-  
+  }
+
   $('.circle').append($(
     '<div class = "car-select"></div>'
   ))
   $('.car-select').append(markSelect);
   $('.car-select').append(modelSelect);
   $('.car-select').append(yearSelect);
-  
+
   $('#mark_select').on('change', function(){
 
     $("#model_select").attr("disabled",false);
@@ -63,8 +62,8 @@ function selectCar(){
     $('#model_select').empty();
     for (let model of modelSet){
       $('#model_select').append($(`<option value="${model}">${model}</option>`));
-    } 
-    
+    }
+
   })
   $('#model_select').on('change', function(){
 
@@ -82,15 +81,15 @@ function selectCar(){
 
     for (let year of yearSet){
       $('#year_select').append($(`<option value="${year}">${year}</option>`));
-    } 
+    }
   })
   $('#year_select').on('change', function(){
      if (this.value!=="Год"){
        let mark = $("#mark_select :selected").text()
        let model = $("#model_select :selected").text();
-       
+
        for (let car of CarsList.cars){
-         if (car['mark'] == mark && car['model'] == model 
+         if (car['mark'] == mark && car['model'] == model
          && car['year'] == this.value){
             showModal(car)
          }
@@ -98,22 +97,13 @@ function selectCar(){
      }
   })
 }
-function selectCarModel(marks){
-  let setModel = new Set();
 
-  for (let car of CarsList.cars){
-    if (marks.has(car['mark'])){
-      setModel.add(car['model'])
-    }
-  }
-}
 
 function giveCarList(){
   $('.circle').one('click', function(){
     $('.press').remove();
     selectCar();
-    
-  })  
+  })
 }
 
 function rotateCircle($circle) {
@@ -123,16 +113,15 @@ function rotateCircle($circle) {
   let speed = 4;
   clearInterval(timer);
   timer = setInterval(function() {
-   
+
     counter += speed;
-   
+
     if (counter > 360) {
       counter = 360;
       giveCarList();
-      clearInterval(timer); 
+      clearInterval(timer);
     }
     $circle.css("transform","rotate(" + counter+ "deg)");
   }, 20)
 },2000);
 }
-
