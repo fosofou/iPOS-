@@ -32,9 +32,9 @@
     text-decoration: none;
     display: inline-block;
     padding: 20px 30px;
-    margin: 10px 20px;
     position: relative;
-    left: 38%;
+    left: 50%;
+    transform: translateX(-50%);
     color: black;
     border: 1px solid black;
     background: none;
