@@ -9,7 +9,7 @@ function drawCircle(){
 
      let $circle = $(".circle");
      $('body').css(
-       {'overflow':'scroll'}
+       {'overflow-y':'scroll'}
      );
      rotateCircle($circle);
    },2000);
