@@ -71,6 +71,7 @@ body{
   height: 400px;
   border-radius: 50%;
   background-color: black;
+
 }
 
 .press{
@@ -94,8 +95,14 @@ body{
 }
 
 .car-select select{
+  font-family: Montserrat,sans-serif;
+  font-size: 18px;
   padding: 5px;
   margin: 5px;
+}
+
+select {
+  cursor: pointer;
 }
 
 .car-message {

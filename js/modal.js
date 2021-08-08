@@ -22,22 +22,24 @@ function showModal(car){
       let dataDelivery = car.delivery.split('-');
       let minDate = dataDelivery[0].split('.');
       let maxDate = dataDelivery[1].split('.');
-
+      let test = minDate.join('.');
       let datapick = $(
         '<div id="datepicker"></div>'+
         `<input type="hidden" id="datepicker_value" value="${minDate.join('.')}">`
       )
       $('#modal').append(datapick);
 
+
       $(function(){
+
+        let queryDate = minDate[2]+'-'+minDate[1]+'-'+minDate[0];
         minDate = new Date(minDate[2], minDate[1] - 1, minDate[0]);
         maxDate = new Date(maxDate[2], maxDate[1] - 1, maxDate[0]);
-        console.log(minDate, maxDate);
-        $("#datepicker").datepicker("setDate", minDate);
 
 	       $("#datepicker").datepicker({
 		         minDate: minDate,
 		         maxDate: maxDate,
+             defaultDate: new Date (queryDate),
              onSelect: function(dateText, inst){
                if (inst.input) {
                    inst.input.trigger('change');
@@ -55,10 +57,8 @@ function showModal(car){
             // $('#modal').remove();
             $('#datepicker').remove();
           }
-
           })
       });
-
     })
 }
 
