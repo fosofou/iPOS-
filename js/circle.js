@@ -8,6 +8,9 @@ function drawCircle(){
      $('body').append(circle);
 
      let $circle = $(".circle");
+     $('body').css(
+       {'overflow':'scroll'}
+     );
      rotateCircle($circle);
    },2000);
 }
@@ -35,7 +38,7 @@ function selectCar(){
   for (let car of CarsList.cars){
     markSet.add(car['mark']);
   }
-  console.log(markSet);
+
   for (let mark of markSet){
     $(markSelect).append($(`<option value="${mark}">${mark}</option>`));
   }

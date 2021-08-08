@@ -4,7 +4,7 @@ function showModal(car){
         $('#modal')
         .css('display', 'block')
         .animate({opacity: 1}, 198);
-        console.log(car['mark'],car['model'],car['year'],car['delivery']);
+        // console.log(car['mark'],car['model'],car['year'],car['delivery']);
       });
 
       $('#modal-close, #myOverlay').click( function(){
@@ -44,7 +44,7 @@ function showModal(car){
                if (inst.input) {
                    inst.input.trigger('change');
                  }
-               console.log(dateText);
+              
 
                $('#modal-close').click();
                let date = dateText.split('/');
