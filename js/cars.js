@@ -65,6 +65,6 @@ const CarsList = {
           "model": "X7 xDrive30d",
           "year": "2021",
           "delivery": "17.09.2021-10.02.2022"
-        },
+        }
     ]
 }
