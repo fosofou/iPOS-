@@ -34,7 +34,37 @@ const CarsList = {
             "mark": "ВАЗ",
             "model": "2104",
             "year": "1914",
-            "delivery": "01.02.2001-01.06.2001"
-        }
+            "delivery": "10.09.2021-01.06.2022"
+        },
+        {
+          "mark": "Nissan",
+          "model": "X-TRAIL",
+          "year": "2021",
+          "delivery": "12.09.2021-21.11.2021"
+        },
+        {
+          "mark": "Nissan",
+          "model": "PATHFINDER",
+          "year": "2021",
+          "delivery": "15.11.2021-24.08.2022"
+        },
+        {
+          "mark": "BMW ",
+          "model": "220d Coupe",
+          "year": "2020",
+          "delivery": "14.09.2021-21.04.2022"
+        },
+        {
+          "mark": "BMW ",
+          "model": "220d Coupe",
+          "year": "2021",
+          "delivery": "14.09.2021-21.04.2022"
+        },
+        {
+          "mark": "BMW ",
+          "model": "X7 xDrive30d",
+          "year": "2021",
+          "delivery": "17.09.2021-10.02.2022"
+        },
     ]
 }
