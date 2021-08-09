@@ -9,13 +9,16 @@ function showModal(car){
 
       $('#modal-close, #myOverlay').click( function(){
         $('#modal').animate({opacity: 0}, 198, function(){
+
           $(this).css('display', 'none');
           $('#myOverlay').fadeOut(297);
+
         });
         $('#modal').remove();
       });
 
     $('#btn').on('click', function(evt) {
+
       evt.preventDefault();
       $('#btn').remove();
 
@@ -23,12 +26,12 @@ function showModal(car){
       let minDate = dataDelivery[0].split('.');
       let maxDate = dataDelivery[1].split('.');
       let test = minDate.join('.');
+
       let datapick = $(
         '<div id="datepicker"></div>'+
         `<input type="hidden" id="datepicker_value" value="${minDate.join('.')}">`
       )
       $('#modal').append(datapick);
-
 
       $(function(){
 
@@ -44,17 +47,15 @@ function showModal(car){
                if (inst.input) {
                    inst.input.trigger('change');
                  }
-              
 
                $('#modal-close').click();
                let date = dateText.split('/');
                date = date[1] + '.' + date[0] + '.' + date[2];
                carMessage(car,date);
-               // $('#modal').remove();
+
 	        },
           onClose: function(){
             $('#modal-close').click();
-            // $('#modal').remove();
             $('#datepicker').remove();
           }
           })
@@ -70,11 +71,12 @@ function createModal() {
     '</div>'+
     '<div id = "myOverlay"></div>'
   )
-  $('body').append(modal)
+  $('.container').append(modal)
 }
 
 function carMessage(car,date){
   $('.circle').remove();
+
   let message = $(
     '<div class = "car-message">'+
       '<p>'+
@@ -84,6 +86,7 @@ function carMessage(car,date){
       '<a href="" id = "restart" class="border-button">Начать заново</a>'+
     '</div>')
   $('body').append(message)
+
   $('#restart').on('click', function(evt) {
     evt.preventDefault();
     restart();

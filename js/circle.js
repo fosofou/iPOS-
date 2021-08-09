@@ -1,10 +1,13 @@
 function drawCircle(){
   setTimeout( function(){
      $(".content").remove();
+
      let circle = $(
+    '<div class = "container">'+
      "<div class = 'circle'>"+
          "<div class = 'press' disabled >Нажать</div>" +
-     "</div>")
+     "</div>"+
+     '</div>');
      $('body').append(circle);
 
      let $circle = $(".circle");
@@ -34,7 +37,6 @@ function selectCar(){
   )
 
   let markSet = new Set();
-
   for (let car of CarsList.cars){
     markSet.add(car['mark']);
   }
